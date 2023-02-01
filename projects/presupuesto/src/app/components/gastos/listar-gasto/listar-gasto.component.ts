@@ -31,4 +31,13 @@ export class ListarGastoComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
+  alicarColorRestante(): string {
+    if (this.presupuesto / 4 > this.restante) {
+      return 'alert alert-danger';
+    } else if (this.presupuesto / 2 > this.restante) {
+      return 'alert alert-warning';
+    }
+    return 'alert alert-secondary';
+  }
 }
